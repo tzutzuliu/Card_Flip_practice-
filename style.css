@@ -1,0 +1,35 @@
+.card-container{
+    width: 400px;
+    height: 500px;
+    position: relative;
+    perspective: 1000px; /*設定1000px*/ /*先給他一個container*/
+}
+
+.cover, .back{
+    width: 100%;
+    height: 100%;
+    position: absolute; /*一定要絕對*/
+    backface-visibility: hidden; /*要隱藏*/
+    transition: transform .30s ease-in-out; /*30s*/
+}
+
+
+.cover{
+    background-color: palevioletred;
+    transform: rotateY(0deg);
+}
+
+
+.card-container:hover .cover{
+    transform: rotateY(180deg);
+}
+
+
+.back{
+    background-color: pink;
+    transform: rotateY(-180deg);
+}
+
+.card-container:hover .back{
+    transform: rotateY(0deg);
+}
